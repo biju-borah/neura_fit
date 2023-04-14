@@ -12,7 +12,7 @@ class WorkOutPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
+            children: [
               SizedBox(height: 50),
               Text(
                 'Workout',
@@ -70,9 +70,8 @@ class WorkOutPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Image.asset(
-                            'images/cardio.PNG',
-                            fit: BoxFit.contain,
+                          Expanded(
+                            child: Image.asset('images/cardio.PNG'),
                           ),
                         ],
                       ),
@@ -118,7 +117,7 @@ class WorkOutPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Image.asset('images/pilates.PNG'),
+                          Expanded(child: Image.asset('images/pilates.PNG')),
                         ],
                       ),
                     ),
@@ -164,7 +163,7 @@ class WorkOutPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Image.asset('images/yoga.PNG'),
+                          Expanded(child: Image.asset('images/yoga.PNG')),
                         ],
                       ),
                     ),
