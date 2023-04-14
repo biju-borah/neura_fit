@@ -39,9 +39,6 @@ class _CameraState extends State<Camera> {
         controller!.startImageStream((CameraImage img) {
           if (!isDetecting) {
             isDetecting = true;
-
-            int startTime = new DateTime.now().millisecondsSinceEpoch;
-
             Tflite.runPoseNetOnFrame(
               bytesList: img.planes.map((plane) {
                 return plane.bytes;
@@ -54,9 +51,6 @@ class _CameraState extends State<Camera> {
               threshold: 0.1,
               nmsRadius: 10,
             ).then((recognitions) {
-              int endTime = new DateTime.now().millisecondsSinceEpoch;
-              print("Detection took ${endTime - startTime}");
-
               widget.setRecognitions(recognitions!, img.height, img.width);
 
               isDetecting = false;
@@ -82,7 +76,7 @@ class _CameraState extends State<Camera> {
     var tmp = MediaQuery.of(context).size;
     var screenH = math.max(tmp.height, tmp.width);
     var screenW = math.min(tmp.height, tmp.width);
-    tmp = controller!.value.previewSize;
+    tmp = controller!.value.previewSize!;
     var previewH = math.max(tmp.height, tmp.width);
     var previewW = math.min(tmp.height, tmp.width);
     var screenRatio = screenH / screenW;
@@ -93,7 +87,7 @@ class _CameraState extends State<Camera> {
           screenRatio > previewRatio ? screenH : screenW / previewW * previewH,
       maxWidth:
           screenRatio > previewRatio ? screenH / previewH * previewW : screenW,
-      child: CameraPreview(controller),
+      child: CameraPreview(controller!),
     );
   }
 }

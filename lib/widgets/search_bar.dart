@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class SearchBar extends StatelessWidget {
   String description;
@@ -17,7 +16,7 @@ class SearchBar extends StatelessWidget {
       child: TextField(
         decoration: InputDecoration(
           hintText: description,
-          icon: Icon(LineAwesomeIcons.search),
+          icon: Icon(Icons.search),
           border: InputBorder.none,
         ),
       ),

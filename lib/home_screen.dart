@@ -1,6 +1,5 @@
 import 'package:neura_fit/main.dart';
 import 'package:flutter/material.dart';
-import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:camera/camera.dart';
 
 import 'main_screen.dart';
@@ -42,17 +41,17 @@ class _HomeScreenState extends State<HomeScreen> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             backgroundColor: Colors.white,
-            icon: Icon(LineAwesomeIcons.universal_access),
+            icon: Icon(Icons.search),
             label: 'Align',
           ),
           BottomNavigationBarItem(
             backgroundColor: Colors.white,
-            icon: Icon(LineAwesomeIcons.burn),
+            icon: Icon(Icons.search),
             label: 'Workout',
           ),
           BottomNavigationBarItem(
             backgroundColor: Colors.white,
-            icon: Icon(LineAwesomeIcons.user),
+            icon: Icon(Icons.search),
             label: 'Profile',
           ),
         ],
