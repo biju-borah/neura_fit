@@ -9,29 +9,26 @@ class WorkOutPage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(height: 50),
-            Text(
-              'Workout',
-              style: TextStyle(
-                color: Color(0xFFFE7C7C),
-                fontWeight: FontWeight.bold,
-                fontSize: 28.0,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              SizedBox(height: 50),
+              Text(
+                'Workout',
+                style: TextStyle(
+                  color: Color(0xFFFE7C7C),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 28.0,
+                ),
               ),
-            ),
-            Image.asset('images/workout.PNG'),
-            SizedBox(height: 10),
-            SizedBox(
-              child: SearchBar('What do you want to do today? Cardio?'),
-            ),
-            SizedBox(height: 10),
-            SizedBox(
-              //width: screen.width,
-              height: 350,
-              child: ListView(
-                scrollDirection: Axis.vertical,
+              Image.asset('images/workout.PNG'),
+              SizedBox(height: 10),
+              SizedBox(
+                child: SearchBar('What do you want to do today? Cardio?'),
+              ),
+              SizedBox(height: 10),
+              Column(
                 children: [
                   Container(
                     height: 200,
@@ -44,6 +41,7 @@ class WorkOutPage extends StatelessWidget {
                       padding: const EdgeInsets.all(18.0),
                       child: Row(
                         //mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,12 +65,15 @@ class WorkOutPage extends StatelessWidget {
                                 'Medium activity',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 14,
+                                  fontSize: 12,
                                 ),
                               ),
                             ],
                           ),
-                          Image.asset('images/cardio.PNG'),
+                          Image.asset(
+                            'images/cardio.PNG',
+                            fit: BoxFit.contain,
+                          ),
                         ],
                       ),
                     ),
@@ -88,7 +89,7 @@ class WorkOutPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(18.0),
                       child: Row(
-                        //mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -112,7 +113,7 @@ class WorkOutPage extends StatelessWidget {
                                 'Heavy activity',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 14,
+                                  fontSize: 12,
                                 ),
                               ),
                             ],
@@ -134,6 +135,7 @@ class WorkOutPage extends StatelessWidget {
                       padding: const EdgeInsets.all(18.0),
                       child: Row(
                         //mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -157,7 +159,7 @@ class WorkOutPage extends StatelessWidget {
                                 'Light activity',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 14,
+                                  fontSize: 12,
                                 ),
                               ),
                             ],
@@ -169,8 +171,8 @@ class WorkOutPage extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

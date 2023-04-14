@@ -21,68 +21,88 @@ class MainScreen extends StatelessWidget {
       //   title: Text('Align.AI'),
       //   backgroundColor: Colors.blueAccent,
       // ),
-      body: Column(
-        //mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(height: 50),
-          Container(
-            padding: EdgeInsets.only(left: 16.0, right: 16.0),
-            child: Text(
-              'AlignAI',
-              style: TextStyle(
-                color: Color(0xFFFE7C7C),
-                fontWeight: FontWeight.bold,
-                fontSize: 28.0,
+      body: SingleChildScrollView(
+        child: Column(
+          //mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 50),
+            Container(
+              padding: EdgeInsets.only(left: 16.0, right: 16.0),
+              child: Text(
+                'AlignAI',
+                style: TextStyle(
+                  color: Color(0xFFFE7C7C),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 28.0,
+                ),
               ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(left: 16.0, right: 16.0),
-            child: Text(
-              'Master Your Body Alignment',
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w400,
-                fontSize: 18.0,
+            Container(
+              padding: EdgeInsets.only(left: 16.0, right: 16.0),
+              child: Text(
+                'Master Your Body Alignment',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 18.0,
+                ),
               ),
             ),
-          ),
-          SizedBox(height: 10),
-          Image.asset('images/align.PNG'),
-          SizedBox(height: 10),
-          Container(
-            padding: EdgeInsets.only(left: 16.0, right: 16.0),
-            child: SizedBox(
-              child: SearchBar('What pose do you wish to align?'),
-            ),
-          ),
-          SizedBox(height: 20),
-          Container(
-            padding: EdgeInsets.only(left: 16.0, right: 16.0),
-            child: Text(
-              'Strength Alignment',
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w600,
-                fontSize: 24.0,
+            SizedBox(height: 10),
+            Image.asset('images/align.PNG'),
+            SizedBox(height: 10),
+            Container(
+              padding: EdgeInsets.only(left: 16.0, right: 16.0),
+              child: SizedBox(
+                child: SearchBar('What pose do you wish to align?'),
               ),
             ),
-          ),
-          Container(
-            child: SizedBox(
-              height: 150,
-              child: ListView(
-                padding: EdgeInsets.symmetric(vertical: 5.0),
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Stack(
-                    children: <Widget>[
-                      Container(
-                        width: 140,
-                        height: 140,
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: ElevatedButton(
+            SizedBox(height: 20),
+            Container(
+              padding: EdgeInsets.only(left: 16.0, right: 16.0),
+              child: Text(
+                'Strength Alignment',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 24.0,
+                ),
+              ),
+            ),
+            Container(
+              child: SizedBox(
+                height: 150,
+                child: ListView(
+                  padding: EdgeInsets.symmetric(vertical: 5.0),
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Stack(
+                      children: <Widget>[
+                        Container(
+                          width: 140,
+                          height: 140,
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0)),
+                              ),
+                              child: Container(
+                                  padding: EdgeInsets.all(10.0),
+                                  child: Image.asset('images/crunch.PNG')),
+                              onPressed: () {}),
+                        ),
+                      ],
+                    ),
+                    Stack(
+                      children: <Widget>[
+                        Container(
+                          width: 140,
+                          height: 140,
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               primary: Colors.white,
                               shape: RoundedRectangleBorder(
@@ -90,249 +110,231 @@ class MainScreen extends StatelessWidget {
                             ),
                             child: Container(
                                 padding: EdgeInsets.all(10.0),
-                                child: Image.asset('images/crunch.PNG')),
-                            onPressed: () {}),
-                      ),
-                    ],
-                  ),
-                  Stack(
-                    children: <Widget>[
-                      Container(
-                        width: 140,
-                        height: 140,
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0)),
+                                child: Image.asset('images/arm_press.PNG')),
+                            onPressed: () => onSelectA(
+                                context: context, modelName: 'posenet'),
                           ),
-                          child: Container(
-                              padding: EdgeInsets.all(10.0),
-                              child: Image.asset('images/arm_press.PNG')),
-                          onPressed: () =>
-                              onSelectA(context: context, modelName: 'posenet'),
                         ),
-                      ),
-                    ],
-                  ),
-                  Stack(
-                    children: <Widget>[
-                      Container(
-                        width: 140,
-                        height: 140,
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0)),
+                      ],
+                    ),
+                    Stack(
+                      children: <Widget>[
+                        Container(
+                          width: 140,
+                          height: 140,
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0)),
+                            ),
+                            child: Container(
+                                padding: EdgeInsets.all(10.0),
+                                child: Image.asset('images/push_up.PNG')),
+                            onPressed: () => print('hello'),
                           ),
-                          child: Container(
-                              padding: EdgeInsets.all(10.0),
-                              child: Image.asset('images/push_up.PNG')),
-                          onPressed: () => print('hello'),
                         ),
-                      ),
-                    ],
-                  ),
-                  Stack(
-                    children: <Widget>[
-                      Container(
-                        width: 140,
-                        height: 140,
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0)),
+                      ],
+                    ),
+                    Stack(
+                      children: <Widget>[
+                        Container(
+                          width: 140,
+                          height: 140,
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0)),
+                            ),
+                            child: Container(
+                                padding: EdgeInsets.all(10.0),
+                                child: Image.asset('images/squat.PNG')),
+                            onPressed: () => onSelectS(
+                                context: context, modelName: 'posenet'),
                           ),
-                          child: Container(
-                              padding: EdgeInsets.all(10.0),
-                              child: Image.asset('images/squat.PNG')),
-                          onPressed: () =>
-                              onSelectS(context: context, modelName: 'posenet'),
                         ),
-                      ),
-                    ],
-                  ),
-                  Stack(
-                    children: <Widget>[
-                      Container(
-                        width: 140,
-                        height: 140,
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0)),
+                      ],
+                    ),
+                    Stack(
+                      children: <Widget>[
+                        Container(
+                          width: 140,
+                          height: 140,
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0)),
+                            ),
+                            child: Container(
+                                padding: EdgeInsets.all(10.0),
+                                child: Image.asset('images/plank.PNG')),
+                            onPressed: () => print('hello'),
                           ),
-                          child: Container(
-                              padding: EdgeInsets.all(10.0),
-                              child: Image.asset('images/plank.PNG')),
-                          onPressed: () => print('hello'),
                         ),
-                      ),
-                    ],
-                  ),
-                  Stack(
-                    children: <Widget>[
-                      Container(
-                        width: 140,
-                        height: 140,
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0)),
+                      ],
+                    ),
+                    Stack(
+                      children: <Widget>[
+                        Container(
+                          width: 140,
+                          height: 140,
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0)),
+                            ),
+                            child: Container(
+                                padding: EdgeInsets.all(10.0),
+                                child: Image.asset('images/lunge_squat.PNG')),
+                            onPressed: () => print('hello'),
                           ),
-                          child: Container(
-                              padding: EdgeInsets.all(10.0),
-                              child: Image.asset('images/lunge_squat.PNG')),
-                          onPressed: () => print('hello'),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          SizedBox(height: 15.0),
-          Container(
-            padding: EdgeInsets.only(left: 16.0, right: 16.0),
-            child: Text(
-              'Yoga Alignment',
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w600,
-                fontSize: 24.0,
+            SizedBox(height: 15.0),
+            Container(
+              padding: EdgeInsets.only(left: 16.0, right: 16.0),
+              child: Text(
+                'Yoga Alignment',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 24.0,
+                ),
               ),
             ),
-          ),
-          Container(
-            child: SizedBox(
-              height: 150,
-              child: ListView(
-                padding: EdgeInsets.symmetric(vertical: 5.0),
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Stack(
-                    children: <Widget>[
-                      Container(
-                        width: 140,
-                        height: 140,
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0)),
+            Container(
+              child: SizedBox(
+                height: 150,
+                child: ListView(
+                  padding: EdgeInsets.symmetric(vertical: 5.0),
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Stack(
+                      children: <Widget>[
+                        Container(
+                          width: 140,
+                          height: 140,
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0)),
+                            ),
+                            child: Container(
+                                padding: EdgeInsets.all(10.0),
+                                child: Image.asset('images/yoga1.PNG')),
+                            onPressed: () => print('hello'),
                           ),
-                          child: Container(
-                              padding: EdgeInsets.all(10.0),
-                              child: Image.asset('images/yoga1.PNG')),
-                          onPressed: () => print('hello'),
                         ),
-                      ),
-                    ],
-                  ),
-                  Stack(
-                    children: <Widget>[
-                      Container(
-                        width: 140,
-                        height: 140,
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0)),
+                      ],
+                    ),
+                    Stack(
+                      children: <Widget>[
+                        Container(
+                          width: 140,
+                          height: 140,
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0)),
+                            ),
+                            child: Container(
+                                padding: EdgeInsets.all(10.0),
+                                child: Image.asset('images/yoga4.PNG')),
+                            onPressed: () => onSelectY(
+                                context: context, modelName: 'posenet'),
                           ),
-                          child: Container(
-                              padding: EdgeInsets.all(10.0),
-                              child: Image.asset('images/yoga4.PNG')),
-                          onPressed: () =>
-                              onSelectY(context: context, modelName: 'posenet'),
                         ),
-                      ),
-                    ],
-                  ),
-                  Stack(
-                    children: <Widget>[
-                      Container(
-                        width: 140,
-                        height: 140,
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0)),
+                      ],
+                    ),
+                    Stack(
+                      children: <Widget>[
+                        Container(
+                          width: 140,
+                          height: 140,
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0)),
+                            ),
+                            child: Container(
+                                padding: EdgeInsets.all(10.0),
+                                child: Image.asset('images/yoga2.PNG')),
+                            onPressed: () => print('hello'),
                           ),
-                          child: Container(
-                              padding: EdgeInsets.all(10.0),
-                              child: Image.asset('images/yoga2.PNG')),
-                          onPressed: () => print('hello'),
                         ),
-                      ),
-                    ],
-                  ),
-                  Stack(
-                    children: <Widget>[
-                      Container(
-                        width: 140,
-                        height: 140,
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0)),
+                      ],
+                    ),
+                    Stack(
+                      children: <Widget>[
+                        Container(
+                          width: 140,
+                          height: 140,
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0)),
+                            ),
+                            child: Container(
+                                padding: EdgeInsets.all(10.0),
+                                child: Image.asset('images/yoga3.PNG')),
+                            onPressed: () => print('hello'),
                           ),
-                          child: Container(
-                              padding: EdgeInsets.all(10.0),
-                              child: Image.asset('images/yoga3.PNG')),
-                          onPressed: () => print('hello'),
                         ),
-                      ),
-                    ],
-                  ),
-                  Stack(
-                    children: <Widget>[
-                      Container(
-                        width: 140,
-                        height: 140,
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0)),
+                      ],
+                    ),
+                    Stack(
+                      children: <Widget>[
+                        Container(
+                          width: 140,
+                          height: 140,
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0)),
+                            ),
+                            child: Container(
+                                padding: EdgeInsets.all(10.0),
+                                child: Image.asset('images/yoga5.PNG')),
+                            onPressed: () => print('hello'),
                           ),
-                          child: Container(
-                              padding: EdgeInsets.all(10.0),
-                              child: Image.asset('images/yoga5.PNG')),
-                          onPressed: () => print('hello'),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          // Container(
-          //   child: RaisedButton(
-          //     child: Text('Pose Estimation'),
-          //     onPressed: () =>
-          //         onSelectY(context: context, modelName: 'posenet'),
-          //   ),
-          // ),
-        ],
+            // Container(
+            //   child: RaisedButton(
+            //     child: Text('Pose Estimation'),
+            //     onPressed: () =>
+            //         onSelectY(context: context, modelName: 'posenet'),
+            //   ),
+            // ),
+          ],
+        ),
       ),
     );
   }
