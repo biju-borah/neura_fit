@@ -30,7 +30,7 @@ class MainScreen extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(left: 16.0, right: 16.0),
               child: Text(
-                'AlignAI',
+                'Neura Fit',
                 style: TextStyle(
                   color: Color(0xFFFE7C7C),
                   fontWeight: FontWeight.bold,
@@ -41,7 +41,7 @@ class MainScreen extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(left: 16.0, right: 16.0),
               child: Text(
-                'Master Your Body Alignment',
+                'Master Your Workouts',
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w400,
